@@ -1,0 +1,2 @@
+$("#users_ajax").html("<%= j(render(partial: 'users/users', locals: { title:@title, users:@users }))%>");
+$("#uho").html("<%= j(render(partial: 'users/uho_form', locals: { user:@user }))%>");

@@ -1,0 +1,11 @@
+<div class="uho">
+  <% if user_signed_in? %>
+    <% if not current_user?(user) %>
+      <% if current_user.uhoing?(user) %>
+        <%= link_to "ウホ取り消し", unuho_path(user.id), data: { confirm: "本当にウホを取り消しますか？" }, method: :delete, remote: true, class:"btn unuho_btn" %>
+      <% else %>
+        <%= link_to "ウホ", uho_path(user.id), method: :post, remote: true, class:"btn uho_btn" %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

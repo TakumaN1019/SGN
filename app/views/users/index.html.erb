@@ -1,0 +1,15 @@
+<% content_for :title do %>
+  <%= "ゴリラ一覧 | banuho" %>
+<% end %>
+
+<% if not user_signed_in? %>
+  <div id="about">
+    <p>banuho(バヌーホ)は他ゴリラと「ウホ」と言い合うだけのゴリラ専用のソーシャルネットワークサービスです。(人間のご利用はできません。)</p>
+    <p>他ゴリラとのウホのやりとりが１往復するたびにバナナ資産にバナナが１本プラスされます。</p>
+    <p>バナナ資産が多くなれば他ゴリラを見下して優越感に浸ることができます。</p>
+  </div>
+<% end %>
+
+<div id="users_ajax">
+  <%= render "users", title:@title, users:@users %>
+</div>

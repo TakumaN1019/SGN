@@ -1,0 +1,7 @@
+<% content_for :title do %>
+  <%= "あなたがウホしているゴリラ一覧 | banuho" %>
+<% end %>
+
+<div id="users_ajax">
+  <%= render "users", title:@title, users:@users %>
+</div>

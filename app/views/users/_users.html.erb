@@ -1,0 +1,32 @@
+<div id="users">
+  <h1><%= title %></h1>
+
+  <% goat_color = "white" %><%# 画像なしユーザーのアイコンのヤギの色 %>
+
+  <% users.each do |user| %>
+    <div class="user_field">
+      <%= link_to("/users/#{user.id}", class:"user") do %>
+        <div class="image">
+          <% gori_number = rand(1..20) %>
+          <%= image_tag "https://sorcial-gorilla-network.s3-ap-northeast-1.amazonaws.com/base/gorilla#{gori_number}.jpg" %>
+        </div>
+        <div class="name"><h4><%= user.name %>ゴリラ</h4></div>
+        <%#= render "uho_form", user:user %>
+
+        <div class="uho">
+          <% if user_signed_in? %>
+            <% if not current_user?(user) %>
+              <% if current_user.uhoing?(user) %>
+                <%= link_to "ウホ取り消し", unuho_path(user.id), data: { confirm: "本当にウホを取り消しますか？" }, method: :delete, remote: true, class:"btn unuho_btn" %>
+              <% else %>
+                <%= link_to "ウホ", uho_path(user.id), method: :post, remote: true, class:"btn uho_btn" %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+
+      <% end %>
+    </div>
+  <% end %>
+  <div style="clear:both;"></div><!-- padding-bottomを効かせるためのもの -->
+</div>
