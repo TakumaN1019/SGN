@@ -22,9 +22,12 @@ test:
 
 production:
   adapter: mysql2
-  encoding: utf8
+  charset: utf8mb4
+  encoding: utf8mb4
+  collation: utf8mb4_general_ci
   reconnect: false
   database: sgn_production
   pool: 5
   username: root
   password:
+

@@ -37,8 +37,8 @@
   h1, h2, h3, h4, p, a { font-family: 'Roboto', 'Kosugi Maru', sans-serif; }
   .logo_font, .btn, .send_btn, #flash p { font-family: 'Fredoka One', cursive; /*'Roboto', sans-serif;*/ }
 
-  .ads_mobile { width:100%; height:auto; margin:30px auto; padding:20px 0; text-align:center; }
-  .ads_pc { display:none; width:100%; height:auto; margin:30px auto; padding:20px 0; text-align:center; }
+  .ads_mobile { width:100%; height:auto; margin:30px auto; padding:20px 0; text-align:center; background:$white; }
+  .ads_pc { display:none; width:100%; height:auto; margin:30px auto; padding:20px 0; text-align:center; background:$white; border-radius:10px; box-shadow:0 1px 6px rgba(0,0,0,0.2); }
 
   #success { position:fixed; top:80px; right:-100%; padding:15px 50px 15px 30px; background:$green; border-radius:1000px 0 0 1000px;
     p { color:white; font-size:18px; text-align:center; padding:0; }
@@ -89,7 +89,7 @@
   }
 
 
-  #user { width:100%; height:auto; margin:auto; padding:50px 0; background:white; text-align:center;
+  #user { width:100%; height:auto; margin:auto; padding:50px 0; background:$white; text-align:center;
     #image { width:100px; height:100px; margin:auto; border-radius:10000px; }
     #name { text-align:center; line-height:25px; margin:20px auto; color:$black; font-size:25px; font-weight:500; }
     #edit_btn { color:$black; border:1px solid $black; border-radius:5px; padding:10px; box-sizing:border-box; }
@@ -116,6 +116,7 @@
         }
         .name { width:calc(45vmin); height:calc(20vmin); padding:10px; display:table; float:left;
           h4 { color:$black; font-size:17px; font-weight:300; display:table-cell; vertical-align:middle; table-layout:fixed; word-break:break-all; word-wrap:break-word; }
+          .banana { color:$main_color; background:none; border-radius:10px; }
         }
       }
       .user:hover {
@@ -140,7 +141,7 @@
 
 
   #form { width:100%; height:auto; margin:auto; padding:20px 0;
-    h1 { color:$black; font-size:25px; font-weight:500; border:1px solid black; border-radius:10px; width:auto; height:auto; margin:30px 20px; padding:10px 20px; display:inline-block; }
+    h1 { color:$black; font-size:25px; font-weight:500; border:1px solid $black; border-radius:10px; width:auto; height:auto; margin:30px 20px; padding:10px 20px; display:inline-block; }
     p { color:$black; font-size:17px; margin:20px; padding:10px; }
     a { color:$blue; font-size:17px; padding:10px; }
     a:hover { background:rgba(0,0,0,0.05); border-radius:1000px; }
@@ -170,7 +171,7 @@
 
 
     // エラーメッセージを表示するところ。fieldクラスをオーバーライドしている。
-    .error_field { background:white;
+    .error_field { background:$white;
       .error_message { color:#e85564; }
     }
 
@@ -181,7 +182,7 @@
 
     // SNS認証ボタン
     #auth_links { width:100%; height:auto; padding:30px 0;
-      .auth_link { width:200px; height:60px; margin:15px auto; padding:15px; border-radius:10px; display:block; color:white; font-size:25px; text-align:center; }
+      .auth_link { width:200px; height:60px; margin:15px auto; padding:15px; border-radius:10px; display:block; color:$white; font-size:25px; text-align:center; }
       .auth_link:hover { opacity:0.9; }
       .twitter { background:$blue; color:white; }
       .google { background:#4285f4; color:white; }
@@ -217,6 +218,9 @@
 
     #notice { width:400px; }
 
+    .ads_mobile { display:none; }
+    .ads_pc { display:block; width:70%; }
+
     header { height:60px;
       #logo { height:60px; }
         #logo a { font-size:20px; margin:10px 20px; padding:7.5px; }
@@ -247,7 +251,7 @@
     #banana { width:70%; margin:50px auto; border-radius:10px; box-shadow:0 1px 6px rgba(0,0,0,0.2); }
 
     #form { width:80%; margin:auto; border-radius:10px; box-shadow:0 1px 6px rgba(0,0,0,0.2);
-      .btn-primary:hover { color:white; background:$black; border:1px solid white; }
+      .btn-primary:hover { color:$white; background:$black; border:1px solid $white; }
     }
 
   }
@@ -257,6 +261,7 @@
     #header_menu {
       ul { width:35%; }
     }
+    .ads_pc { width:60%; }
     #home_top { width:60%; }
     #user { width:60%; }
     #banana { width:60%; }

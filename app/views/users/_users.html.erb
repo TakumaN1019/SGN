@@ -10,8 +10,8 @@
           <% gori_number = rand(1..20) %>
           <%= image_tag "https://sorcial-gorilla-network.s3-ap-northeast-1.amazonaws.com/base/gorilla#{gori_number}.jpg" %>
         </div>
-        <div class="name"><h4><%= user.name %>ゴリラ</h4></div>
-        <%#= render "uho_form", user:user %>
+        <div class="name"><h4><%= user.name %>ゴリラ<br>
+                              <span class="banana">バナナ資産： <%= user.banana if user.banana.present? %><%= "0" if not user.banana.present? %>本</span></h4></div>
 
         <div class="uho">
           <% if user_signed_in? %>
