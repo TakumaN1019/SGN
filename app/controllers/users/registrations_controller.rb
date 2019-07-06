@@ -1,7 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
   before_action :set_user, only: [:edit, :update, :destroy]
-  before_action :ensure_correct_user, only: [:edit, :update, :destroy] # 投稿者でなければリダイレクト>ではじく
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy] # 管理人または投稿者でなければリダイレクト>ではじく
 
   def new
     super
@@ -62,9 +62,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # 他人のページにアクセスしようとしたらリダイレクトではじく
     def ensure_correct_user
       @user = User.find_by(id: params[:id])
-      if not current_user.id == @user.id
-        flash[:alert] = "権限がないのでアクセスできません。"
-        redirect_to user_path(current_user.id)
+      if not current_user.id == 1
+        if not current_user.id == @user.id
+          flash[:alert] = "権限がないのでアクセスできません。"
+          redirect_to user_path(current_user.id)
+        end
       end
     end
 

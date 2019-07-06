@@ -78,17 +78,6 @@
   #header_menu_back { display:none; position:fixed; top:0; bottom:0; left:0; right:0; width:100%; height:100%; margin:auto; padding:0; background:rgba(0,0,0,0.4); z-index:8; cursor:pointer; }
 
 
-  #home_top { width:100%; height:auto; margin:0 auto; padding:30px; text-align:center; background:$white;
-    .description {
-      p { color:$black; font-size:18.5px; text-align:left; line-height:20px; margin-bottom:20px; }
-    }
-    #btns { margin:auto; padding:50px 0; text-align:center;
-      .btn { width:auto; height:auto; margin:10px; padding:15px 20px; color:$white; background:$main_color; border-radius:10px; display:inline; }
-      .btn:hover { opacity:0.9; }
-    }
-  }
-
-
   #user { width:100%; height:auto; margin:auto; padding:50px 0; background:$white; text-align:center;
     #image { width:100px; height:100px; margin:auto; border-radius:10000px; }
     #name { text-align:center; line-height:25px; margin:20px auto; color:$black; font-size:25px; font-weight:500; }
@@ -105,10 +94,15 @@
 
   #about { width:100%; height:auto; margin:auto; padding:50px 30px; clear:both; background:$yellow; 
     p { color:$main_color; font-size:18px; }
+    #btns { margin:auto; padding:50px 0 10px 0; text-align:center;
+      .btn { width:auto; height:auto; margin:10px; padding:15px 20px; color:$white; background:$main_color; border-radius:5px; display:inline; }
+      .btn:hover { opacity:0.9; }
+    }
   }
 
   #users { width:100%; height:auto; margin:auto; padding:50px 0; clear:both;
     h1 { color:$black; font-size:25px; font-weight:500px; text-align:center; margin:30px auto; }
+    p { color:$black; font-size:18px; text-align:center; margin:10px auto; }
     .user_field { width:100%; height:auto; margin:auto; clear:both;
       .user {
         .image { width:calc(20vmin); height:calc(20vmin); text-align:center; float:left;

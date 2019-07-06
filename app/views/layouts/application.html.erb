@@ -66,9 +66,11 @@
           <li><%= link_to user_path(current_user.id) do %><div class="icon"><i class="far fa-user-circle"></i></div><div class="name">マイページ</div><% end %></li>
           <li><%= link_to uhoings_path do %><div class="icon"><i class="far fa-user-circle"></i></div><div class="name">ウホ中</div><% end %></li>
           <li><%= link_to uhoers_path do %><div class="icon"><i class="far fa-user-circle"></i></div><div class="name">ウホアー</div><% end %></li>
-          <li><%= link_to(logout_path(current_user.id), method: :delete) do %><div class="icon"><i class="far fa-grimace"></i></div><div class="name">ログアウト</div><% end %></li>
+          <li><%= link_to ranking_path do %><div class="icon"><i class="fas fa-crown"></i></div><div class="name">ランキング</div><% end %></li>
+          <li><%= link_to(logout_path(current_user.id), method: :delete) do %><div class="icon"><i class="far fa-grimace"></i></div><div class="name">ログアウホ</div><% end %></li>
         <% else %>
           <li><%= link_to root_path do %><div class="icon"><i class="fas fa-igloo"></i></div><div class="name">トップ</div><% end %></li>
+          <li><%= link_to ranking_path do %><div class="icon"><i class="fas fa-crown"></i></div><div class="name">ランキング</div><% end %></li>
           <li><%= link_to login_get_path do %><div class="icon"><i class="far fa-grin"></i></div><div class="name">ログイン</div><% end %></li>
           <li><%= link_to signup_get_path do %><div class="icon"><i class="far fa-grin-tongue-wink"></i></div><div class="name">新規登録</div><% end %></li>
         <% end %>
@@ -82,11 +84,13 @@
       <ul>
         <% if user_signed_in? %>
           <li><%= link_to "ゴリラ一覧", root_path %></li>
+          <li><%= link_to "ランキング", ranking_path %></li>
           <li><%= link_to "マイページ", user_path(current_user.id) %></li>
           <li><%= link_to "ウホ中", uhoings_path %></li>
           <li><%= link_to "ウホアー", uhoers_path %></li>
         <% else %>
           <li><%= link_to "トップ", root_path %></li>
+          <li><%= link_to "ランキング", ranking_path %></li>
           <li><%= link_to "ログイン", login_get_path %></li>
           <li><%= link_to "新規登録", signup_get_path %></li>
         <% end %>

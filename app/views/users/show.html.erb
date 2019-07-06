@@ -6,7 +6,7 @@
   <% gori_number = rand(19) %>
   <%= image_tag "https://sorcial-gorilla-network.s3-ap-northeast-1.amazonaws.com/base/gorilla#{gori_number}.jpg", id:"image" %>
 
-  <h2 id="name"><%= @user.name %>ゴリラ</h2>
+  <h2 id="name"><%= @user.name %>ゴリラ<br>(Level:<%= @user.level if @user.level.present? %><%= "0" if not @user.level.present? %>)</h2>
   <% if user_signed_in? %>
     <% if current_user?(@user) %>
       <%= link_to "プロフィールを編集", edit_user_path(current_user.id), id:"edit_btn" %>

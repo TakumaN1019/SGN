@@ -7,6 +7,10 @@
     <p>banuho(バヌーホ)は他ゴリラと「ウホ」と言い合うだけのゴリラ専用のソーシャルネットワークサービスです。(人間のご利用はできません。)</p>
     <p>他ゴリラとのウホのやりとりが１往復するたびにバナナ資産にバナナが１本プラスされます。</p>
     <p>バナナ資産が多くなれば他ゴリラを見下して優越感に浸ることができます。</p>
+    <div id="btns">
+      <%= link_to "ログイン", login_get_path, class: "btn" %>
+      <%= link_to "新規登録", signup_get_path, class: "btn" %>
+    </div>
   </div>
 <% end %>
 
@@ -14,7 +18,7 @@
 <%= render "home/adsense" %>
 
 <div id="users_ajax">
-  <%= render "users", title:@title, users:@users %>
+  <%= render "users", title:@title, users:@users, users_count:@users_count %>
 </div>
 
 <%# アドセンス広告=>レクタングル大 %>

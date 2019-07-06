@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get "users/:id", to: "users#show", param: :id, as: :user # プロフィール画面
   get "uhoings", to: "users#uhoings", param: :id, as: :uhoings # ウホしているユーザー
   get "uhoers", to: "users#uhoers", param: :id, as: :uhoers # ウホワー
+  get "ranking", to: "users#ranking", as: :ranking # ランキング
 
   post "uho/:uhoer_id", to: "relationships#create", as: :uho #ウホ
   delete "/uho/:uhoer_id", to: "relationships#destroy", as: :unuho #ウホ取り消し

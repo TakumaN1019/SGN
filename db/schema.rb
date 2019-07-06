@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_26_092230) do
+ActiveRecord::Schema.define(version: 2019_06_30_082332) do
 
   create_table "relationships", force: :cascade do |t|
     t.integer "uhoer_id"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2019_06_26_092230) do
     t.string "location"
     t.string "image"
     t.integer "banana"
+    t.integer "level"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

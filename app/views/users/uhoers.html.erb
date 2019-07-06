@@ -2,8 +2,11 @@
   <%= "あなたをウホしたゴリラ一覧 | banuho" %>
 <% end %>
 
+<%# アドセンス広告=>レクタングル大 %>
+<%= render "home/adsense" %>
+
 <div id="users_ajax">
-  <%= render "users", title:@title, users:@users %>
+  <%= render "users", title:@title, users:@users, users_count:@users_count %>
 </div>
 
 <%# アドセンス広告=>レクタングル大 %>
